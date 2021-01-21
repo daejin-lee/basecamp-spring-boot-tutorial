@@ -8,6 +8,7 @@ import org.zerock.board.entity.Member;
 
 import javax.transaction.Transactional;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
@@ -44,5 +45,13 @@ public class BoardRepositoryTests {
         Object[] arr = (Object[])result;
         System.out.println("----------");
         System.out.println(Arrays.toString(arr));
+    }
+
+    @Test
+    public void testGetBoardWithReply() {
+        List<Object[]> result = boardRepository.getBoardWithReply(100L);
+        for(Object[] arr : result) {
+            System.out.println(Arrays.toString(arr));
+        }
     }
 }
