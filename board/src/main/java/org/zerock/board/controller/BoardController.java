@@ -36,11 +36,12 @@ public class BoardController {
         redirectAttributes.addFlashAttribute("msg", bno);
         return "redirect:/board/list";
     }
-    @GetMapping({"read"})
+    @GetMapping({"read", "modify"})
     public void read(@ModelAttribute("requestDTO") PageRequestDTO pageRequestDTO, Long bno, Model model) {
         log.info("bno: " + bno);
         BoardDTO boardDTO = boardService.get(bno);
         log.info(boardDTO);
         model.addAttribute("dto", boardDTO);
     }
+    @PostMapping
 }
