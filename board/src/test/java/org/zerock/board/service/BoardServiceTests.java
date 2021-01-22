@@ -38,4 +38,10 @@ public class BoardServiceTests {
         BoardDTO boardDTO = boardService.get(bno);
         System.out.println(boardDTO);
     }
+
+    @Test
+    public void testRemove() {
+        Long bno = 1L;
+        boardService.removeWithReplies(bno);
+    }
 }
